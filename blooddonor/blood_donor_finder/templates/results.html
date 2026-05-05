@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results</title>
+</head>
+<body>
+
+<h1>Available Donors</h1>
+
+{% if donors %}
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Blood Group</th>
+            <th>Phone</th>
+            <th>City</th>
+        </tr>
+
+        {% for donor in donors %}
+        <tr>
+            <td>{{ donor.name }}</td>
+            <td>{{ donor.blood_group }}</td>
+            <td>{{ donor.phone }}</td>
+            <td>{{ donor.city }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>No donors found.</p>
+{% endif %}
+
+<br>
+<a href="/">Go Back</a>
+
+</body>
+</html>
